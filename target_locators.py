@@ -11,16 +11,17 @@ driver.maximize_window()
 #Open the url
 driver.get("https://www.target.com/")
 
+
+
 #Action
 driver.find_element(By.XPATH,"//a[@aria-label='Account, sign in']").click()
 driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn' and text()='Sign in or create account']").click()
 
-sleep(7)
-
+sleep(5)
 
 #Assert (Verification)
 expected_text = 'Sign in or create account'
-actual_text = driver.find_element(By.XPATH,"//h1[text()='Sign in or create account']" ).text
+actual_text = driver.find_element(By.XPATH,"//h1[contains(@class,'styles_ndsHeading__HcGpD')]" ).text
 driver.find_element(By.XPATH,"//div[@class='sc-609faf1c-2 dVggxh']//button[@type='button']")
 
 assert expected_text in actual_text, f"Error, expected {expected_text} not in actual {actual_text}"
