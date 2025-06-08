@@ -15,7 +15,7 @@ driver.get("https://www.target.com/")
 
 #Action
 driver.find_element(By.XPATH,"//a[@aria-label='Account, sign in']").click()
-driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn' and text()='Sign in or create account']").click()
+driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn']").click()
 
 sleep(5)
 
