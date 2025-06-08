@@ -16,7 +16,7 @@ driver.find_element(By.XPATH,"//input[@class='a-button-input']" )
 
 #locator Amazon logo
 driver.find_element(By.XPATH,"//i[@class='a-icon a-icon-logo']")
-
+ 
 #locator Email
 driver.find_element(By.ID,'ap_email')
 
