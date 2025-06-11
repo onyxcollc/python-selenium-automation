@@ -3,10 +3,16 @@ from behave import given, when, then
 from time import sleep
 
 
-@when('Click on cart icon')
-def cart_icon_click(context):
-    context.driver.find_element(By.XPATH,"//a[@data-test='@web/CartLink']").click()
-    sleep(5)
+@when('Open cart page')
+def open_cart_page(context):
+    context.driver.get('https://www.target.com/cart')
+
+
+@then('Verify cart has {amount} item(s)')
+def verify_cart_items(context, amount):
+    cart_summery = context.driver.find_element(By.XPATH,"//div[span[contains(text(),'subtotal')]]")
+    assert f'{amount} item(s)' in cart_summery, f"Expected {amount} item(s) but got {cart_summery}"
+
 
 @then("Verify 'Your cart is empty' message is shown")
 def verify_empty_cart(context):
