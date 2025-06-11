@@ -10,8 +10,8 @@ def open_cart_page(context):
 
 @then('Verify cart has {amount} item(s)')
 def verify_cart_items(context, amount):
-    cart_summery = context.driver.find_element(By.XPATH,"//div[span[contains(text(),'subtotal')]]")
-    assert f'{amount} item(s)' in cart_summery, f"Expected {amount} item(s) but got {cart_summery}"
+    cart_summery = context.driver.find_element(By.XPATH,"//div[span[contains(text(),'subtotal')]]").text
+    assert f'subtotal{amount}' in cart_summery, f"Expected {amount} item(s) but got {cart_summery}"
 
 
 @then("Verify 'Your cart is empty' message is shown")

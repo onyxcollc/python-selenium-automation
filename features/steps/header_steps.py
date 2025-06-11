@@ -21,7 +21,10 @@ def cart_icon_click(context):
 
 @when('Click on Add to Cart button')
 def click_add_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR,"[id*='addToCartButton']")
+    sleep(13)
+    context.driver.execute_script("window.scrollTo(0, 500);")
+    # context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);)")
+    context.driver.find_element(By.CSS_SELECTOR,"[id*='addToCartButton']").click()
     sleep(5)
 
 @when('Confirm Add to Cart button from side navigation')
