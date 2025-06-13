@@ -4,6 +4,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
+
+
+
+
 @given('Open target main page')
 def open_target_main_page(context):
     context.driver.get('https://www.target.com/')

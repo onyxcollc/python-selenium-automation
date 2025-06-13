@@ -10,7 +10,7 @@ driver.maximize_window()
 
 #open the url
 driver.get('https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&')
-
+sleep(10)
  #locator Continue
 driver.find_element(By.XPATH,"//input[@class='a-button-input']" )
 
@@ -25,7 +25,7 @@ driver.find_element(By.XPATH,"//a[@href='/gp/help/customer/display.html/ref=ap_s
 
 #locator click on the ^ sign
 driver.find_element(By.XPATH,"//i[@class='a-icon a-icon-expand']").click()
-sleep(4)
+sleep(10)
 
 #Privacy Notice
 driver.find_element(By.XPATH,"//a[@href='/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=468496']")

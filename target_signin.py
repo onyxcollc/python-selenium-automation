@@ -28,3 +28,6 @@ assert expected_text in actual_text, f"Error, expected {expected_text} not in ac
 print("Test Passed")
 driver.quit()
 
+# learn how to scroll with these scripts
+# context.driver.execute_script("window.scrollTo(0, 500);")
+# context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);)")

@@ -5,51 +5,33 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-
-@when('Search for {product}')
-def search_product(context,product):
-    context.driver.find_element(By.XPATH,"//input[@type='search']").send_keys(product)
-    context.driver.find_element(By.XPATH,"//button[@type='submit']").click()
-
-
-
-@when('Click on cart icon')
-def cart_icon_click(context):
-    context.driver.find_element(By.XPATH, "//a[@data-test='@web/CartLink']").click()
-    sleep(5)
+SEARCH_FIELD = (By.XPATH,"//input[@type='search']")
+SEARCH_BUTTON =(By.XPATH,"//button[@type='submit']")
+ACCOUNT_ICON = (By.XPATH,"//a[@data-test='@web/AccountLink']")
+SIGN_IN_BUTTON = (By.XPATH,"//button[@data-test='accountNav-signIn']")
+HEADER_LINKS =(By.CSS_SELECTOR, "[data-test*= '@web/GlobalHeader/UtilityHeader/']")
 
 
-@when('Click on Add to Cart button')
-def click_add_to_cart(context):
-    sleep(13)
-    context.driver.execute_script("window.scrollTo(0, 500);")
-    # context.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);)")
-    context.driver.find_element(By.CSS_SELECTOR,"[id*='addToCartButton']").click()
-    sleep(5)
 
-@when('Confirm Add to Cart button from side navigation')
-def confirm_add_to_cart(context):
-    WebDriverWait(context.driver,10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,"[class*='contentWrapper']")))
+@when('Search for {search_word}')
+def search_product(context,search_word):
+    context.driver.find_element(*SEARCH_FIELD).send_keys(search_word)
+    context.driver.wait.until(EC.presence_of_element_located(*SEARCH_BUTTON)).click()
 
-
-    button = WebDriverWait(context.driver,10).until(EC.element_to_be_clickable((By.CSS_SELECTOR,"[data-test='shippingButton']")))
-
-    print("Add to Cart button found")
-    button.click()
 
 @when('Click account icon')
 def click_account_icon(context):
-    context.driver.find_element(By.XPATH,"//a[@data-test='@web/AccountLink']").click()
+    context.driver.find_element(*ACCOUNT_ICON).click()
 
 @when('Click sign in button')
 def click_sign_in_button(context):
-    context.driver.find_element(By.XPATH,"//button[@data-test='accountNav-signIn']").click()
+    context.driver.find_element(*SIGN_IN_BUTTON).click()
     sleep(3)
 
 
 @then('Verify header has {number} links')
 def verify_header_links(context,number):
-   links = context.driver.find_elements(By.CSS_SELECTOR, "[data-test*= '@web/GlobalHeader/UtilityHeader/']")
+   links = context.driver.find_elements(*HEADER_LINKS)
    print(links)
 
    assert len(links) == int(number), f"Expected {number}links, got {len(links)}"
