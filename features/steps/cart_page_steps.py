@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-CART_TOTAL = (By.XPATH,"//div[span[contains(text(),'subtotal')]]")
+CART_TOTAL = (By.XPATH,"//span[contains(@class,'sc-4625')]")
 CART_EMPTY_MESSAGE = (By.CSS_SELECTOR,".styles_ndsHeading__HcGpD.styles_fontSize1__i0fbt")
 PRODUCT_NAME = (By.XPATH,"//div[contains(text(),'Dad Nutrition Facts Personalized Mug')]")
 
@@ -34,7 +34,7 @@ def verify_product(context):
     product_name_in_cart = context.driver.find_element(*PRODUCT_NAME).text.strip()
     stored_name = context.product_name.strip()
 
-    assert "dad nutrition facts" in product_name_in_cart.lower(), \
+    assert "portmeirion botanic" in product_name_in_cart.lower(), \
     f"Cart product '{product_name_in_cart}' is not the expected product."
 
     # assert stored_name[:20].lower() in product_name_in_cart[:30].lower(), \

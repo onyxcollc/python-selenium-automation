@@ -4,16 +4,19 @@ Feature: Tests for Target Search
   Scenario: User can search for tea on Target
     Given Open target main page
     When Search for tea
+    And Click search button
     Then Verify search worked for tea
 
   Scenario: User can search for coffee on Target
     Given Open target main page
     When Search for coffee
+    And Click search button
     Then Verify search worked for coffee
 
   Scenario: User can search for mug on Target
     Given Open target main page
     When Search for mug
+    And Click search button
     Then Verify search worked for mug
 
 
@@ -27,3 +30,8 @@ Feature: Tests for Target Search
 #    |mug         |mug             |
 #    |coffee      |coffee          |
 
+
+  Scenario: Verify that user can see product names and images
+    Given Open target main page
+    When Search for xbox controller
+    Then Verify that every product has a name and an image

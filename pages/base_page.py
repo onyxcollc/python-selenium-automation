@@ -1,4 +1,4 @@
-from target_signin import expected_text
+#from target_signin import expected_text
 
 
 class Page:

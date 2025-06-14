@@ -16,8 +16,13 @@ HEADER_LINKS =(By.CSS_SELECTOR, "[data-test*= '@web/GlobalHeader/UtilityHeader/'
 @when('Search for {search_word}')
 def search_product(context,search_word):
     context.driver.find_element(*SEARCH_FIELD).send_keys(search_word)
-    context.driver.wait.until(EC.presence_of_element_located(*SEARCH_BUTTON)).click()
+    #context.driver.wait.until(EC.visibility_of_element_located(*SEARCH_BUTTON)).click()
+    sleep(5)
 
+@when('Click search button')
+def click_search(context):
+    context.driver.find_element(*SEARCH_BUTTON).click()
+    sleep(5)
 
 @when('Click account icon')
 def click_account_icon(context):
