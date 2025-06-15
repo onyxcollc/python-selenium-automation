@@ -1,9 +1,11 @@
 from selenium.webdriver.common.by import By
-from pages.base_page import Page
+
+from pages.base_page import BasePage
 
 
 
-class SearchResultsPage(Page):
+
+class SearchResultsPage(BasePage):
     SEARCH_RESULT_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
 
     def verify_search_results(self):

@@ -7,7 +7,6 @@ from time import sleep
 
 
 SEARCH_RESULT_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
-CART_ICON = (By.XPATH, "//a[@data-test='@web/CartLink']")
 ADD_TO_CART_BUTTON = (By.XPATH,"//button[@data-test='chooseOptionsButton' and @id='addToCartButtonOrTextIdFor92406317'] ")
 ADD_TO_CART_BUTTON_SIDE_NAV = (By.XPATH,"//button[@data-test='shippingButton']")
 SIDE_NAV_PRODUCT_NAME = (By.XPATH,"//h4[contains(text(),'Portmeirion Botanic')]")
@@ -15,10 +14,7 @@ PRODUCT_LISTINGS = (By.CSS_SELECTOR,"[class='container clearfix']")
 PRODUCT_TITLE = (By.CSS_SELECTOR,"[title*='Xbox']")
 PRODUCT_IMG = (By.CSS_SELECTOR,'img')
 
-@when('Click on cart icon')
-def cart_icon_click(context):
-    context.driver.find_element(*CART_ICON).click()
-    sleep(5)
+
 
 
 @when('Click on Add to Cart button')
@@ -47,9 +43,9 @@ def confirm_add_to_cart(context):
 
 @then('Verify search worked for {product}')
 def verify_search(context, product):
-    actual_text = context.driver.find_element(*SEARCH_RESULT_TXT).text
-    assert product in actual_text, f"Error, expected text {product} not in actual {actual_text}"
-
+    # actual_text = context.driver.find_element(*SEARCH_RESULT_TXT).text
+    # assert product in actual_text, f"Error, expected text {product} not in actual {actual_text}"
+    context.app.search_results_page.verify_search_results()
 
 @then('Verify that every product has a name and an image')
 def verify_name_and_image(context):

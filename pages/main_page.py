@@ -1,6 +1,7 @@
-from pages.base_page import Page
+from pages.base_page import BasePage
 
 
-class MainPage(Page):
+class MainPage(BasePage):
+
     def open_main_page(self):
         self.driver.get("https://www.target.com/")
