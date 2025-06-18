@@ -48,6 +48,7 @@ driver.find_element(By.XPATH,"//a[contains(@href,'_notification_condition')]")
 #Privacy Notice Link
 driver.find_element(By.XPATH,"//a[contains(@href,'_notification_privacy')]")
 
+sleep(5)
 
 print("Test Passed")
 
