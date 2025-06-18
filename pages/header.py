@@ -10,7 +10,7 @@ class Header(BasePage):
     SEARCH_BUTTON = (By.XPATH, "//button[@type='submit']")
     SIGN_IN_BUTTON = (By.XPATH, "//button[@data-test='accountNav-signIn']")
     CART_ICON = (By.XPATH, "//a[@data-test='@web/CartLink']")
-
+    HEADER_LINKS = (By.CSS_SELECTOR, "[data-test*= '@web/GlobalHeader/UtilityHeader/']")
 
     def search_product(self, search_word):
         self.input_text(search_word, *self.SEARCH_FIELD)
@@ -35,6 +35,9 @@ class Header(BasePage):
         self.wait_for_element_click(*self.ACCOUNT_ICON)
 
 
-    # def verify_header_links(self):
-    #     self.verify_text(*self.)
+    def verify_header_links(self, number):
+        links = self.find_elements(*self.HEADER_LINKS)
+        print(links)
+        assert len(links) == int(number), f"Expected {number}links, got {len(links)}"
+
 

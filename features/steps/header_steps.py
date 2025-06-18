@@ -9,7 +9,6 @@ from time import sleep
 
 
 
-HEADER_LINKS =(By.CSS_SELECTOR, "[data-test*= '@web/GlobalHeader/UtilityHeader/']")
 
 
 
@@ -48,8 +47,5 @@ def click_sign_in_button(context):
     context.app.header.click_sign_in_button()
 
 @then('Verify header has {number} links')
-def verify_header_links(context,number):
-   links = context.driver.find_elements(*HEADER_LINKS)
-   print(links)
-
-   assert len(links) == int(number), f"Expected {number}links, got {len(links)}"
+def verify_header_links(context, number):
+   context.app.header.verify_header_links(number)
