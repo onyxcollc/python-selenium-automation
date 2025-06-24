@@ -48,20 +48,45 @@ class BasePage:
         , message= f"Expected '{partial_url}' not in URL")
 
 
+    def get_current_window_id(self):
+        window = self.driver.current_window_handle
+        print(f"Original window: {window}")
+        return window
+
+
+    def switch_to_new_window(self):
+        self.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        print(f"Switching to a new window: {all_windows[1]}")
+        self.driver.switch_to.window(all_windows[1])
+
+
+    def switch_to_window_by_id(self,window_id):
+        print(f"Switching to window: {window_id}")
+        self.driver.switch_to.window(window_id)
+
+
+    def close_window(self):
+        self.driver.close()
+
+
     def verify_text(self,expected_text,*locator):
         actual_text = self.driver.find_element(*locator).text
         assert expected_text == actual_text, f"Expected text '{expected_text}' did not match '{actual_text}'"
+
 
     def verify_partial_text(self,expected_partial_text,*locator):
         actual_text = self.driver.find_element(*locator).text
         assert expected_partial_text in actual_text, \
             f"Expected text '{expected_partial_text}' not in  '{actual_text}'"
 
+
     def verify_url(self,expected_url):
         actual_url = self.driver.current_url
         print('Current URL', actual_url)
         assert expected_url == actual_url, \
             f"Expected URL '{expected_url}' did not match actual URL '{actual_url}'"
+
 
     def verify_partial_url(self,expected_partial_url):
         actual_url = self.driver.current_url
