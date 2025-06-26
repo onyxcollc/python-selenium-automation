@@ -9,14 +9,14 @@ Feature: Tests for logged out user can navigate Sign in page
 
 
 
-  Scenario: User logging into Target Website
+  Scenario: User logs into Target Website
     Given Open target main page
     When Click account icon
     When Click sign in button
     And Enter email onyxcollc@gmail.com
     When Click continue button
     # And Click enter your password
-    When Enter your Childish
+    When Enter your HappyGod1
     And Click sign in with password
     #Then Verify login
 
@@ -29,3 +29,15 @@ Feature: Tests for logged out user can navigate Sign in page
     Then Verify Terms and Conditions page is opened
     And Close current page
     And Return to original window
+
+
+
+    Scenario: User logs into Target Website With Wrong Password
+    Given Open target main page
+    When Click account icon
+    When Click sign in button
+    And Enter email onyxcollc@gmail.com
+    When Click continue button
+    When Enter your TrueWord
+    And Click sign in with password
+    Then Verify Error Message

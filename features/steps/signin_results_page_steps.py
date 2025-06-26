@@ -36,6 +36,6 @@ def verify_sign_in(context):
     context.app.signin_page.verify_sign_in()
 
 
-# @then('Verify login')
-# def verify_log_in(context):
-#     context.app.sign_in_page.verify_login()
+@then('Verify Error Message')
+def verify_error_message(context):
+    context.app.signin_page.verify_error_message()

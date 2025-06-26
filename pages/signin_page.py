@@ -15,7 +15,7 @@ class SignInPage(BasePage):
     SIGN_IN_RESULT = (By.CSS_SELECTOR, "[class*=ndsHeading]")
     LOGIN_VERIFICATION = (By.XPATH, "//button[text()='Sign in with password']")
     TERMS_CONDITIONS_LINK = (By.CSS_SELECTOR,"a[aria-label*='terms & conditions']")
-
+    ERROR_MESSAGE = (By.XPATH,"//*[text()='That password is incorrect.']" )
 
 
     def open_signin_page(self):
@@ -49,6 +49,5 @@ class SignInPage(BasePage):
     def verify_sign_in(self):
         self.verify_text('Sign in or create account',*self.SIGN_IN_RESULT)
 
-    #def verify_login(self):
-        # self.verify_text('Hi, Nico',*self.LOGIN_VERIFICATION)
-        # sleep(5)
+    def verify_error_message(self):
+        self.verify_text('That password is incorrect.',*self.ERROR_MESSAGE)

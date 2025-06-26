@@ -3,16 +3,18 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.ie.webdriver import WebDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
+
 from app.application import Application
 
 
-def browser_init(context, scenario_name):
+def browser_init(context):
     """
     :param context: Behave context
     """
     driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
     context.driver = webdriver.Chrome(service=service)
+
 
     #context.driver = webdriver.Firefox(service=service)
     #context.driver = webdriver.Safari(service=service)
@@ -33,18 +35,19 @@ def browser_init(context, scenario_name):
     # }
     # options.set_capability('bstack:options', bstack_options)
     # context.driver = webdriver.Remote(command_executor=url, options=options)
-    #
-    #
-    # context.driver.maximize_window()
-    # context.driver.implicitly_wait(4)
-    # context.driver.wait = WebDriverWait(context.driver, 10)
-    # context.app = Application(context.driver)
+
+
+    context.driver.maximize_window()
+    context.driver.implicitly_wait(4)
+    context.driver.wait = WebDriverWait(context.driver, 10)
+    context.app = Application(context.driver)
 
 
 
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
-    browser_init(context,scenario.name)
+    browser_init(context)
+
 
 
 def before_step(context, step):

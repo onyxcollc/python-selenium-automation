@@ -35,3 +35,11 @@ Feature: Tests for Target Search
     Given Open target main page
     When Search for xbox controller
     Then Verify that every product has a name and an image
+
+
+
+  Scenario: User can see favorites tooltip for search results
+    Given Open target main page
+    When Search for tea
+    And Hover over favorites icon
+    Then Favorites tooltip is shown

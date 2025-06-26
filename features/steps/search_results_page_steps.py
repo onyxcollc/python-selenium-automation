@@ -41,11 +41,18 @@ def confirm_add_to_cart_side_nav(context):
     context.app.main_page.confirm_add_to_cart_side_nav()
 
 
+
+@when('Hover over favorites icon')
+def hover_favorites_icon(context):
+    context.app.search_results_page.hover_fav_icon()
+
+
 @then('Verify search worked for {product}')
 def verify_search(context, product):
     # actual_text = context.driver.find_element(*SEARCH_RESULT_TXT).text
     # assert product in actual_text, f"Error, expected text {product} not in actual {actual_text}"
     context.app.search_results_page.verify_search_results(product)
+
 
 @then('Verify that every product has a name and an image')
 def verify_name_and_image(context):
@@ -57,3 +64,8 @@ def verify_name_and_image(context):
         assert title, 'Product title not shown'
         print(title)
         product.find_element(*PRODUCT_IMG)
+
+
+@then('Favorites tooltip is shown')
+def verify_fav_tt_shown(context):
+    context.app.search_results_page.verify_fav_tt_shown()
