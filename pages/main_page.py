@@ -9,12 +9,12 @@ class MainPage(BasePage):
     ADD_TO_CART_BUTTON_SIDE_NAV = (By.XPATH, "//button[@data-test='shippingButton']")
 
     def open_main_page(self):
-        self.driver.get("https://www.target.com/")
+        self.open_url()
 
 
 
     def open_cart_page(self):
-        self.driver.get('https://www.target.com/cart')
+        self.open_url('cart')
 
 
     def confirm_add_to_cart_side_nav(self):

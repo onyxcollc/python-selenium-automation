@@ -1,17 +1,10 @@
+from itertools import product
+
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-
-
-
-SEARCH_RESULT_TXT = (By.XPATH, "//div[@data-test='lp-resultsCount']")
-
-
-PRODUCT_LISTINGS = (By.CSS_SELECTOR,"[class='container clearfix']")
-PRODUCT_TITLE = (By.CSS_SELECTOR,"[title*='Xbox']")
-PRODUCT_IMG = (By.CSS_SELECTOR,'img')
 
 
 
@@ -48,7 +41,7 @@ def hover_favorites_icon(context):
 
 
 @then('Verify search worked for {product}')
-def verify_search(context, product):
+def verify_search(context,product):
     # actual_text = context.driver.find_element(*SEARCH_RESULT_TXT).text
     # assert product in actual_text, f"Error, expected text {product} not in actual {actual_text}"
     context.app.search_results_page.verify_search_results(product)
@@ -56,15 +49,7 @@ def verify_search(context, product):
 
 @then('Verify that every product has a name and an image')
 def verify_name_and_image(context):
-
-    products = context.driver.find_elements(*PRODUCT_LISTINGS)
-
-    for product in products:
-        title = product.find_element(*PRODUCT_TITLE).text
-        assert title, 'Product title not shown'
-        print(title)
-        product.find_element(*PRODUCT_IMG)
-
+    context.app.search_results_page.verify_name_and_image()
 
 @then('Favorites tooltip is shown')
 def verify_fav_tt_shown(context):

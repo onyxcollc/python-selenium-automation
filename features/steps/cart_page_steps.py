@@ -5,9 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
-#CART_TOTAL = (By.XPATH,"//span[contains(@class,'sc-4625')]")
-
-
 @when('Open cart page')
 def open_cart_page(context):
     # context.driver.get('https://www.target.com/cart')

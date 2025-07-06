@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 
 from app.application import Application
-
+from support.logger import logger
 
 def browser_init(context):
     """
@@ -46,17 +46,20 @@ def browser_init(context):
 
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
+    logger.info(f'\nStarted scenario: , {scenario.name}')
     browser_init(context)
 
 
 
 def before_step(context, step):
     print('\nStarted step: ', step)
+    logger.info(f'Started step: , {step}')
 
 
 def after_step(context, step):
     if step.status == 'failed':
         print('\nStep failed: ', step)
+        logger.error(f'Step failed: , {step}')
 
 
 def after_scenario(context, feature):

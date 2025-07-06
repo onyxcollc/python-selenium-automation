@@ -1,6 +1,6 @@
 Feature: Tests for Target Search
 
-
+  @smoke
   Scenario: User can search for tea on Target
     Given Open target main page
     When Search for tea

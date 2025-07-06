@@ -6,25 +6,19 @@ from time import sleep
 
 
 
-
-
-
-
-
-
 @when('Search for {search_word}')
 def search_product(context,search_word):
     # context.driver.find_element(*SEARCH_FIELD).send_keys(search_word)
     # context.driver.wait.until(EC.visibility_of_element_located(*SEARCH_BUTTON)).click()
     # sleep(5)
-    context.app.header.search_product(search_word)
+    context.app.header_page.search_product(search_word)
 
 
 @when('Click search button')
 def click_search(context):
     # context.driver.find_element(*SEARCH_BUTTON).click()
     # sleep(5)
-    context.app.header.click_search()
+    context.app.header_page.click_search()
 
 
 @when('Click account icon')
@@ -37,7 +31,7 @@ def click_account_icon(context):
 def cart_icon_click(context):
     # context.driver.find_element(*CART_ICON).click()
     # sleep(5)
-    context.app.header.click_cart()
+    context.app.header_page.click_cart()
 
 
 @when('Click sign in button')

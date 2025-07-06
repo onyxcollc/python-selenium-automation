@@ -4,7 +4,7 @@ from time import sleep
 from pages.base_page import BasePage
 
 
-class Header(BasePage):
+class HeaderPage(BasePage):
     ACCOUNT_ICON = (By.XPATH, "//a[@data-test='@web/AccountLink']")
     SEARCH_FIELD = (By.XPATH, "//input[@type='search']")
     SEARCH_BUTTON = (By.XPATH, "//button[@type='submit']")

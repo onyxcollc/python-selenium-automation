@@ -6,6 +6,7 @@ Feature: Tests For Target Shopping Cart
     Then Verify 'Your cart is empty' message is shown
     Then Verify Cart page opened
 
+   @smoke
   Scenario: User can add a product to cart
     Given Open target main page
     When Search for mug

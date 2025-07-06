@@ -3,16 +3,14 @@ from behave import given, when, then
 from time import sleep
 
 
-BENEFIT_CELLS = (By.CSS_SELECTOR,"div[class*='cell-item']")
+
 
 
 @given('Open target circle page')
 def open_circle_page(context):
-    context.driver.get('https://www.target.com/circle')
+    context.app.circle_page.open_circle_page()
+
 
 @then('Verify circle page has more then {number} benefit cells')
-def verify_benefit_cells(context, number):
-   cells = context.driver.find_elements(*BENEFIT_CELLS)
-   print(f"Found{len(cells)} cells")
-
-   assert len(cells) > int(number), f"Expected more than {number}, but found {len(cells)} "
+def verify_benefit_cells(context,number):
+    context.app.circle_page.verify_benefit_cells(number)

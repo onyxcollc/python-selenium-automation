@@ -9,7 +9,7 @@ class TargetAppUiPage(BasePage):
 
 
     def open_target_app(self):
-        self.driver.get('https://www.target.com/c/target-app/-/N-4th2r')
+        self.open_url('c/target-app/-/N-4th2r')
 
 
     def click_privacy_link(self):

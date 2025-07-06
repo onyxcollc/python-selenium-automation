@@ -6,15 +6,17 @@ from pages.base_page import BasePage
 
 class ProductDetailsPage(BasePage):
 
-    COLOR_OPTIONS = (By.CSS_SELECTOR, "li[class*='CarouselItem'] img")
-    SELECTED_COLOR = (By.CSS_SELECTOR, "div[class*='styles_headerWrapper']")
+    COLOR_OPTIONS = (By.CSS_SELECTOR, "li[class='styles_ndsCarouselItem__dnUkr']")
+    SELECTED_COLOR = (By.CSS_SELECTOR, "[class*='styles_headerWrapper__']")
 
     def open_product_details_page(self, product):
         self.get(f'https://www.target.com/p/{product}')
 
 
     def verify_user_colors(self):
-        expected_colors = ['Black', 'Brown', 'Dark Pink', 'Gray', 'Green', 'light Green', 'White']
+        expected_colors = ['Black', 'Dark Blue', 'Dark Green', 'Light Gray', 'Light Green',
+                           'light Green','Railroad Gray', 'Red Velvet','True White'
+                           ,'Blue', 'Pink','Aqua Green']
         actual_colors = []
 
         colors = self.find_elements(*self.COLOR_OPTIONS)  # webelements1, webelements2, webelements3

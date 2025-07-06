@@ -31,7 +31,7 @@ def verify_privacy_page_opened(context):
     context.app.privacy_policy_page.verify_pp_opened()
 
 
-@then('CLose current page')
+@then('Close current page')
 def close_page(context):
     context.app.base_page.close_window()
 

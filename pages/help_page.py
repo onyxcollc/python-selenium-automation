@@ -21,7 +21,7 @@ class HelpPage(BasePage):
 
     def open_help_page(self):
         self.driver.get('https://help.target.com/help/SubCategoryArticle?childcat=Returns&parentcat=Returns+%26+Exchanges&searchQuery=')
-        sleep(2)
+
 
 
 
@@ -31,6 +31,11 @@ class HelpPage(BasePage):
         select.select_by_value(value)
 
 
+    def verify_page_header(self,expected_text):
+        locator = self._get_header_locator(expected_text)
+        self.wait_for_element(*locator)
+
+
     # def verify_returned_opened(self):
     #     self.find_element(*self.RETURNS_HEADER)
     #
@@ -38,6 +43,4 @@ class HelpPage(BasePage):
     #     self.find_element(*self.PROMOTIONS_HEADER)
 
 
-    def verify_page_header(self,expected_text):
-        locator = self._get_header_locator(expected_text)
-        self.wait_for_element(*locator)
+
