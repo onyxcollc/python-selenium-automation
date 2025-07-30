@@ -24,7 +24,7 @@ def click_search(context):
 @when('Click account icon')
 def click_account_icon(context):
     # context.driver.find_element(*ACCOUNT_ICON).click()
-    context.app.header.click_account_icon()
+    context.app.header_page.click_account_icon()
 
 
 @when('Click on cart icon')
@@ -38,8 +38,8 @@ def cart_icon_click(context):
 def click_sign_in_button(context):
     # context.driver.find_element(*SIGN_IN_BUTTON).click()
     # sleep(3)
-    context.app.header.click_sign_in_button()
+    context.app.header_page.click_sign_in_button()
 
 @then('Verify header has {number} links')
 def verify_header_links(context, number):
-   context.app.header.verify_header_links(number)
+   context.app.header_page.verify_header_links(number)

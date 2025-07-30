@@ -16,7 +16,7 @@ Feature: Tests for logged out user can navigate Sign in page
     And Enter email onyxcollc@gmail.com
     When Click continue button
     # And Click enter your password
-    When Enter your HappyGod1
+    When Enter your Jumpman23
     And Click sign in with password
     #Then Verify login
 

@@ -5,7 +5,7 @@ from pages.base_page import BasePage
 
 
 class HeaderPage(BasePage):
-    ACCOUNT_ICON = (By.XPATH, "//a[@data-test='@web/AccountLink']")
+    ACCOUNT_ICON = (By.XPATH, "//span[text()='Account']")
     SEARCH_FIELD = (By.XPATH, "//input[@type='search']")
     SEARCH_BUTTON = (By.XPATH, "//button[@type='submit']")
     SIGN_IN_BUTTON = (By.XPATH, "//button[@data-test='accountNav-signIn']")
