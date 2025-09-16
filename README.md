@@ -10,6 +10,11 @@ It reflects both foundational learning and practical implementation of real-worl
  https://github.com/user-attachments/assets/6ba4fee1-f276-4477-b3b8-80c24478f4f9
 
 
+
+ Click The Link For A Full View Of My Work.
+ https://docs.google.com/videos/d/1yTNLTsszC1-g-G9TuhnmrwIsK7vakv-OKv-rupKsY_E/edit?usp=sharing
+
+
 ---
 
 ## 🚀 Project Overview
