@@ -6,8 +6,8 @@ It reflects both foundational learning and practical implementation of real-worl
 
 ![image alt](https://github.com/onyxcollc/python-selenium-automation/blob/c5f1233d24fd8694cd73721d9aa1e00b23089acb/target.jpg)
 
-[!Click And Download Video To Watch Demo]
-(https://github.com/onyxcollc/python-selenium-automation/blob/775fd9fedc22e5be07dd38b6c15dff0006a126e7/Target%20user%20journy%20demo.mp4)
+ Watch Demo
+ https://github.com/user-attachments/assets/6ba4fee1-f276-4477-b3b8-80c24478f4f9
 
 
 ---
