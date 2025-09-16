@@ -1,8 +1,11 @@
-# 🧪 Python-Selenium-Automation – BDD UI Test Framework
+<img width="1486" height="981" alt="image" src="https://github.com/user-attachments/assets/9b59dc1a-d698-440c-aa5c-98e6f8cac825" /># 🧪 Python-Selenium-Automation – BDD UI Test Framework
 
 This project was one of my **first hands-on experiences with automation**, 
 where I learned core skills in test design, Selenium WebDriver, and maintainable test architecture.
 It reflects both foundational learning and practical implementation of real-world QA practices.
+
+
+<img src="https://github.com/onyxcollc/python-selenium-automation/blob/c5f1233d24fd8694cd73721d9aa1e00b23089acb/target.jpg"alt="Alt Text" width="500" height="500">
 
 ---
 
