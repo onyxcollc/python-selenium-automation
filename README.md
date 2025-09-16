@@ -1,4 +1,4 @@
-<img width="1486" height="981" alt="image" src="https://github.com/user-attachments/assets/9b59dc1a-d698-440c-aa5c-98e6f8cac825" /># 🧪 Python-Selenium-Automation – BDD UI Test Framework
+## 🧪 Python-Selenium-Automation – BDD UI Test Framework
 
 This project was one of my **first hands-on experiences with automation**, 
 where I learned core skills in test design, Selenium WebDriver, and maintainable test architecture.
