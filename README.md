@@ -4,8 +4,8 @@ This project was one of my **first hands-on experiences with automation**,
 where I learned core skills in test design, Selenium WebDriver, and maintainable test architecture.
 It reflects both foundational learning and practical implementation of real-world QA practices.
 
+![image alt](https://github.com/onyxcollc/python-selenium-automation/blob/c5f1233d24fd8694cd73721d9aa1e00b23089acb/target.jpg)
 
-<img src="https://github.com/onyxcollc/python-selenium-automation/blob/c5f1233d24fd8694cd73721d9aa1e00b23089acb/target.jpg"alt="Alt Text" width="500" height="500">
 
 ---
 
